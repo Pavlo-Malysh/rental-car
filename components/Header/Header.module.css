@@ -1,0 +1,38 @@
+.header {
+    border-bottom: 1px solid #f2f4f7;
+    background-color: #f2f4f7;
+
+}
+
+.headerBlock {
+    display: flex;
+}
+
+.navigation {
+    margin-left: auto;
+    list-style-type: none;
+}
+
+.menuList {
+    display: flex;
+    gap: 32px;
+    padding: 24px 0;
+}
+
+.logo {
+    display: block;
+
+}
+
+.logoLink {
+    padding: 26px 0;
+}
+
+.navLink {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    text-align: center;
+    color: #101828;
+}

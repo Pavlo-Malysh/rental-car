@@ -7,13 +7,20 @@ export type CatalogListResponse = {
     cars: CarCatalog[];
     totalCars: number;
     page: number;
-    totalPage: number;
+    totalPages: number;
 };
 
 axios.defaults.baseURL = "https://car-rental-api.goit.global/";
 
-export const getCatalog = async () => {
-    const res = await axios.get<CatalogListResponse>("/cars");
+export const getCatalog = async (page: number, limit: number) => {
+    const res = await axios.get<CatalogListResponse>("/cars", {
+        params: {
+            page,
+            limit
+        }
+    });
+    console.log(res.data);
+
     return res.data;
 };
 

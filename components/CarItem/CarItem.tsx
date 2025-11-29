@@ -7,16 +7,17 @@ import Link from "next/link";
 
 type Props = {
     item: CarCatalog;
+    isPriority?: boolean;
 };
 
-const CarItem = ({ item }: Props) => {
+const CarItem = ({ item, isPriority }: Props) => {
     return (
         <li className={css.itemCar}>
             <button type="button" className={css.btnSelect}>  <svg width="16" height="16" className={css.icon}>
                 <use href="/icons.svg#icon-heart"></use>
             </svg></button>
             <div className={css.wrapImg}>
-                <Image src={item.img} alt={item.brand} height={268} width={276} className={css.img} />
+                <Image src={item.img} alt={item.brand} height={268} width={276} className={css.img} priority={isPriority} />
             </div>
 
             <div className={css.titleWrap}>

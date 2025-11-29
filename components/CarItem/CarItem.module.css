@@ -1,0 +1,140 @@
+.itemCar {
+    width: calc((100% - 96px) / 4);
+    position: relative;
+}
+
+.wrapImg {
+    overflow: hidden;
+    border-radius: 14px;
+    max-width: 276px;
+    max-height: 268px;
+    margin-bottom: 16px;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    fill: #333;
+    transition: fill 0.2s ease;
+}
+
+.btnSelect {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btnSelect:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.btnSelect:active {
+    transform: scale(0.95);
+}
+
+.btnSelect:hover .icon {
+    fill: #000;
+}
+
+.title,
+.price {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.accent {
+    color: #3470ff;
+}
+
+.titleWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.price {
+    margin-right: 12px;
+}
+
+.type {
+    text-transform: lowercase;
+}
+
+.type::first-letter {
+    text-transform: capitalize;
+}
+
+.textWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.textWrapFirst {
+    margin-bottom: 4px;
+}
+
+.textItem {
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #8d929a;
+
+}
+
+.textItem::after {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -6;
+    width: 1px;
+    height: 100%;
+    background-color: #dadde1;
+}
+
+.textItem:last-child::after {
+    content: none;
+}
+
+.textWrapList {
+    margin-bottom: 28px;
+}
+
+.linkDetails {
+    display: block;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    line-height: 1.25;
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 97px;
+
+    background-color: #3470ff;
+}
+
+.linkDetails:hover,
+.linkDetails:focus {
+    background-color: #0b44cd;
+}

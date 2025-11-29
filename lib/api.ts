@@ -1,26 +1,23 @@
-// lib/api.ts
 
+import { CarCatalog, CarId } from "@/types/car";
 import axios from "axios";
 
-export type Note = {
-    id: string;
-    title: string;
-    content: string;
-    categoryId: string;
-    userId: string;
-    createdAt: string;
-    updatedAt: string;
+
+export type CatalogListResponse = {
+    cars: CarCatalog[];
+    totalCars: number;
+    page: number;
+    totalPage: number;
 };
 
-export type NoteListResponse = {
-    notes: Note[];
-    total: number;
-};
+axios.defaults.baseURL = "https://car-rental-api.goit.global/";
 
-axios.defaults.baseURL = "https://next-v1-notes-api.goit.study";
-
-export const getNotes = async () => {
-    const res = await axios.get<NoteListResponse>("/notes");
+export const getCatalog = async () => {
+    const res = await axios.get<CatalogListResponse>("/cars");
     return res.data;
 };
-// Переробити
+
+export const getCarById = async (id: string) => {
+    const res = await axios.get<CarId>(`/cars/${id}`);
+    return res.data
+}

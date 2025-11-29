@@ -42,7 +42,10 @@ a {
 }
 
 body {
-  font-family: var(--font-nunito-sans), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
@@ -99,8 +102,7 @@ button {
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
+
 }
 
 .container {

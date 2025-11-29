@@ -36,3 +36,7 @@
     text-align: center;
     color: #101828;
 }
+
+.navLinkActive {
+    color: #0b44cd;
+}

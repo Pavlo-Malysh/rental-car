@@ -1,3 +1,4 @@
+import { getCarById } from "@/lib/api";
 
 type Props = {
     params: Promise<{ id: string }>;
@@ -6,6 +7,10 @@ type Props = {
 const CarDetails = async ({ params }: Props) => {
     const { id } = await params;
     console.log('note id:', id);
+
+    const car = await getCarById(id);
+    console.log("THIS Page Id", car);
+
 
     return <div>CarDetails</div>;
 };

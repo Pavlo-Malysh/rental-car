@@ -1,0 +1,37 @@
+
+export type CarCatalog = {
+    id: string;
+    year: number;
+    brand: string;
+    model: string;
+    type: string;
+
+    img: string;
+    rentalPrice: string;
+    rentalCompany: string;
+    address: string;
+    mileage: number
+};
+
+
+
+export type CarId = {
+    id: string;
+    yea: number;
+    brand: string;
+    model: string;
+    type: string;
+    img: string;
+    description: string;
+    fuelConsumption: string,
+    engineSize: string;
+    accessories: string[];
+    functionalities: string[];
+
+    rentalPrice: string;
+    rentalCompany: string;
+    address: string;
+    rentalConditions: string[];
+    mileage: number
+};
+

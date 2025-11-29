@@ -34,6 +34,11 @@
     margin: 0 auto;
 }
 
+.heroLink:hover,
+.heroLink:focus {
+    background-color: #0b44cd;
+}
+
 .bgImage {
     background-image: url('/hero-img.png');
     background-size: cover;

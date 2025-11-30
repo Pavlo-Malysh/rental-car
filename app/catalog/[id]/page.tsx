@@ -1,4 +1,4 @@
-import { getCarById } from "@/lib/api";
+import { getCarByIdServer } from "@/lib/api/serverApi";
 import CarDetailsClient from "./CarDetails.client";
 import css from "./Page.module.css"
 
@@ -8,10 +8,8 @@ type Props = {
 
 const CarDetails = async ({ params }: Props) => {
     const { id } = await params;
-    console.log('note id:', id);
 
-    const car = await getCarById(id);
-    console.log("THIS Page Id", car);
+    const car = await getCarByIdServer(id);
 
 
     return <section className={css.sectionDetails}>

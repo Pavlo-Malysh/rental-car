@@ -2,7 +2,7 @@
 import CarItem from "../CarItem/CarItem";
 import css from "./CarsList.module.css"
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { getCatalog } from "@/lib/api";
+import { getCatalog } from "@/lib/api/api";
 import { SyncLoader } from "react-spinners";
 import { CarCatalog } from "@/types/car";
 

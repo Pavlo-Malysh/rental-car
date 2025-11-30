@@ -21,6 +21,7 @@ const SearchBox = ({ brands, rentalPrice, onSubmit }: Props) => {
     const fieldId = useId();
     const brandRef = useRef<HTMLDivElement>(null);
     const priceRef = useRef<HTMLDivElement>(null);
+    const formRef = useRef<HTMLFormElement>(null);
 
     const toggleSelect = (selectName: string) => {
         setOpenSelect(openSelect === selectName ? null : selectName);
@@ -75,11 +76,18 @@ const SearchBox = ({ brands, rentalPrice, onSubmit }: Props) => {
         }
 
         onSubmit(data);
+
+        // Reset form state
+        setSelectedBrand("");
+        setSelectedPrice("");
+        setMinMileage("");
+        setMaxMileage("");
+        formRef.current?.reset();
     }
 
 
     return (
-        <form action={handleSubmit} className={css.filtersForm}>
+        <form ref={formRef} action={handleSubmit} className={css.filtersForm}>
             <div className={css.filterField} ref={brandRef}>
                 <label htmlFor={`brand-${fieldId}`} className={css.filterLabel}>Car brand</label>
                 <input type="hidden" name="brand" value={selectedBrand} />

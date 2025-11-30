@@ -1,9 +1,10 @@
 import css from "./CatalogPage.module.css"
-import { getBrands, getCatalog } from "@/lib/api";
+import { getCatalog } from "@/lib/api/clientApi";
+import { getBrandsServer } from "@/lib/api/serverApi";
 import CatalogPageClient from "./CatalogPage.client";
 
 const CatalogPage = async () => {
-    const brands = await getBrands();
+    const brands = await getBrandsServer();
     const initialData = await getCatalog(1, 12, {});
 
     return (

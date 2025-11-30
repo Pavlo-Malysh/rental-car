@@ -2,6 +2,8 @@ import { getCarByIdServer } from "@/lib/api/serverApi";
 import CarDetailsClient from "./CarDetails.client";
 import css from "./Page.module.css"
 
+export const dynamic = 'force-dynamic';
+
 type Props = {
     params: Promise<{ id: string }>;
 };

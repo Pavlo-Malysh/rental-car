@@ -19,7 +19,7 @@ const Header = () => {
                         <li>
                             <Link
                                 href="/"
-                                className={`${css.navLink} ${pathname === '/' ? css.navLinkActive : ''}`}
+                                className={`${css.navLink} ${pathname === '/' ? css.navLinkActive : ''}`.trim()}
                             >
                                 Home
                             </Link>
@@ -27,7 +27,7 @@ const Header = () => {
                         <li>
                             <Link
                                 href="/catalog"
-                                className={`${css.navLink} ${pathname === '/catalog' ? css.navLinkActive : ''}`}
+                                className={`${css.navLink} ${pathname === '/catalog' ? css.navLinkActive : ''}`.trim()}
                             >
                                 Catalog
                             </Link>

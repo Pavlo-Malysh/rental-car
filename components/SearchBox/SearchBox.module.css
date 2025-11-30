@@ -1,0 +1,50 @@
+.filtersForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 56px;
+
+}
+
+
+.filterField {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filterLabel {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33333;
+    color: #8d929a;
+}
+
+.filterSubmit {
+    border-color: transparent;
+    border-radius: 12px;
+    padding: 12px 51px;
+    background-color: #3470ff;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    line-height: 1.25;
+    color: #fff;
+}
+
+.filterSubmit:hover,
+.filterSubmit:focus {
+    background-color: #0b44cd;
+}
+
+.filterControl {
+    border-color: transparent;
+    border-radius: 12px;
+    padding: 12px 16px;
+    width: 204px;
+    height: 44px;
+    background-color: #f7f7f7;
+}

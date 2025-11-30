@@ -35,3 +35,10 @@ export type CarId = {
     mileage: number
 };
 
+export type SearchForm = {
+    brand?: string;
+    rentalPrice?: string;
+    minMileage?: string;
+    maxMileage?: string;
+
+}

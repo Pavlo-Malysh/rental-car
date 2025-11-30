@@ -1,5 +1,5 @@
 
-import { CarCatalog, CarId } from "@/types/car";
+import { CarCatalog, CarId, SearchForm } from "@/types/car";
 import axios from "axios";
 
 
@@ -12,11 +12,16 @@ export type CatalogListResponse = {
 
 axios.defaults.baseURL = "https://car-rental-api.goit.global/";
 
-export const getCatalog = async (page: number, limit: number) => {
+export const getCatalog = async (page: number, limit: number, searchQuery: SearchForm) => {
+    const filteredQuery = Object.fromEntries(
+        Object.entries(searchQuery).filter(([, value]) => value)
+    );
+
     const res = await axios.get<CatalogListResponse>("/cars", {
         params: {
             page,
-            limit
+            limit,
+            ...filteredQuery
         }
     });
     console.log(res.data);
@@ -26,5 +31,10 @@ export const getCatalog = async (page: number, limit: number) => {
 
 export const getCarById = async (id: string) => {
     const res = await axios.get<CarId>(`/cars/${id}`);
+    return res.data
+}
+
+export const getBrands = async () => {
+    const res = await axios.get<string[]>("/brands");
     return res.data
 }

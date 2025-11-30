@@ -1,5 +1,5 @@
 
-import { CarCatalog, CarId, SearchForm } from "@/types/car";
+import { CarCatalog, Car, SearchForm } from "@/types/car";
 import axios from "axios";
 
 
@@ -30,7 +30,7 @@ export const getCatalog = async (page: number, limit: number, searchQuery: Searc
 };
 
 export const getCarById = async (id: string) => {
-    const res = await axios.get<CarId>(`/cars/${id}`);
+    const res = await axios.get<Car>(`/cars/${id}`);
     return res.data
 }
 

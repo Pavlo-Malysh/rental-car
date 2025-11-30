@@ -1,8 +1,10 @@
-
+"use client"
 import Image from "next/image";
 import css from "./CarItem.module.css"
 import { CarCatalog } from "@/types/car";
 import Link from "next/link";
+import { useCarsListStore } from "@/store/carsListStore";
+import { useState, useEffect } from "react";
 
 
 type Props = {
@@ -11,11 +13,31 @@ type Props = {
 };
 
 const CarItem = ({ item, isPriority }: Props) => {
+    const { toggleFavorite, isFavorite } = useCarsListStore();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        setMounted(true);
+    }, []);
+
+    const isItemFavorite = mounted && isFavorite(item.id);
+
+    const handleToggleFavorite = () => {
+        toggleFavorite(item);
+    };
+
     return (
         <li className={css.itemCar}>
-            <button type="button" className={css.btnSelect}>  <svg width="16" height="16" className={css.icon}>
-                <use href="/icons.svg#icon-heart"></use>
-            </svg></button>
+            <button
+                type="button"
+                className={css.btnSelect}
+                onClick={handleToggleFavorite}
+            >
+                <svg width="16" height="16" className={`${css.icon} ${isItemFavorite ? css.iconActive : ''}`.trim()}>
+                    <use href={`/icons.svg#${isItemFavorite ? 'icon-heart-filled' : 'icon-heart'}`}></use>
+                </svg>
+            </button>
             <div className={css.wrapImg}>
                 <Image src={item.img} alt={item.brand} height={268} width={276} className={css.img} priority={isPriority} />
             </div>

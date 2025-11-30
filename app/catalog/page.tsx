@@ -1,31 +1,15 @@
 import css from "./CatalogPage.module.css"
-import { getCatalog, CatalogListResponse, getBrands } from "@/lib/api";
-import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
+import { getBrands, getCatalog } from "@/lib/api";
 import CatalogPageClient from "./CatalogPage.client";
 
 const CatalogPage = async () => {
-    const queryClient = new QueryClient();
-    const limit = 12;
-    const searchQuery = {};
-
-    await queryClient.prefetchInfiniteQuery({
-        queryKey: ["cars", searchQuery],
-        queryFn: ({ pageParam = 1 }) => getCatalog(pageParam, limit, searchQuery),
-        initialPageParam: 1,
-        getNextPageParam: (lastPage: CatalogListResponse) => {
-            const currentPage = Number(lastPage.page);
-            return currentPage < lastPage.totalPages ? currentPage + 1 : undefined;
-        },
-    })
-
     const brands = await getBrands();
+    const initialData = await getCatalog(1, 12, {});
 
     return (
-        <HydrationBoundary state={dehydrate(queryClient)}>
-            <div className={`container ${css.catalogPage}`}>
-                <CatalogPageClient brands={brands} />
-            </div>
-        </HydrationBoundary>
+        <div className={`container ${css.catalogPage}`}>
+            <CatalogPageClient brands={brands} initialData={initialData} />
+        </div>
     )
 };
 

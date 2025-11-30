@@ -1,0 +1,75 @@
+.subtitle {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    margin-bottom: 8px;
+}
+
+.text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #8d929a;
+    margin-bottom: 24px;
+}
+
+.input {
+    border-radius: 12px;
+    padding: 12px 20px;
+    width: 576px;
+    height: 48px;
+    background-color: #f7f7f7;
+    border-color: transparent;
+    margin-bottom: 16px;
+}
+
+.textarea {
+    border-radius: 12px;
+    padding: 12px 20px 56px;
+    width: 576px;
+    height: 88px;
+    background-color: #f7f7f7;
+    outline: transparent;
+    resize: none;
+    margin-bottom: 24px;
+}
+
+.input::placeholder {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #8d929a;
+}
+
+.textarea::placeholder {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #8d929a;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 12px 51px;
+    width: 156px;
+    height: 44px;
+    background-color: #3470ff;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #fff;
+    border-color: transparent;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #0b44cd;
+}

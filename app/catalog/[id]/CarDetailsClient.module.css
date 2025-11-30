@@ -1,0 +1,116 @@
+.boxDetails {
+    display: flex;
+    gap: 72px;
+}
+
+.wrapImg {
+    border-radius: 19px;
+    width: 640px;
+    height: 512px;
+    overflow: hidden;
+}
+
+.wrapForm {
+    border: 1px solid #dadde1;
+    border-radius: 10px;
+    padding: 32px;
+    width: 640px;
+    height: 488px;
+}
+
+.boxContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    color: #101828;
+    margin-bottom: 8px;
+}
+
+.carId {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #8d929a;
+}
+
+.boxLocation {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.subBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.textItem {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.price {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33333;
+    color: #3470ff;
+    margin-bottom: 32px;
+}
+
+.text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.description {
+    margin-bottom: 68px;
+}
+
+.condition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    margin-bottom: 20px;
+}
+
+.carInfoList {
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+}
+
+.typeText {
+    display: inline-block;
+    text-transform: lowercase;
+}
+
+.typeText::first-letter {
+    text-transform: uppercase;
+}

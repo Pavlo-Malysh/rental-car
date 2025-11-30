@@ -15,9 +15,9 @@ export type CarCatalog = {
 
 
 
-export type CarId = {
+export type Car = {
     id: string;
-    yea: number;
+    year: number;
     brand: string;
     model: string;
     type: string;
@@ -40,5 +40,4 @@ export type SearchForm = {
     rentalPrice?: string;
     minMileage?: string;
     maxMileage?: string;
-
 }

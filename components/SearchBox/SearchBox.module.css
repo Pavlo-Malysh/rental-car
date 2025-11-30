@@ -1,6 +1,6 @@
 .filtersForm {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     gap: 16px;
     margin-bottom: 56px;
@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    position: relative;
 }
 
 .filterLabel {
@@ -25,7 +26,7 @@
 .filterSubmit {
     border-color: transparent;
     border-radius: 12px;
-    padding: 12px 51px;
+    padding: 10px 51px;
     background-color: #3470ff;
     font-family: "Manrope", sans-serif;
     font-weight: 600;
@@ -47,4 +48,125 @@
     width: 204px;
     height: 44px;
     background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.customSelect {
+    position: relative;
+}
+
+.selectArrow {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.selectArrowUp {
+    transform: rotate(180deg);
+}
+
+.selectDropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 204px;
+    height: 272px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.selectDropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.selectDropdown::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 12px 0;
+}
+
+.selectDropdown::-webkit-scrollbar-thumb {
+    background-color: #dadde1;
+    border-radius: 10px;
+    width: 8px;
+    height: 128px;
+    background-clip: padding-box;
+}
+
+
+.selectDropdown li {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #8d929a;
+}
+
+.selectDropdown li:hover {
+    background-color: #f7f7f7;
+}
+
+.selectDropdown li.selectOptionSelected {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.mileageInputs {
+    display: flex;
+}
+
+.mileageInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.mileageLabel {
+    position: absolute;
+    left: 16px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    color: #101828;
+    pointer-events: none;
+}
+
+.mileageInputFrom {
+    border: none;
+    border-right: 1px solid #dadde1;
+    border-radius: 12px 0 0 12px;
+    width: 160px;
+    height: 44px;
+    background-color: #f7f7f7;
+    padding: 12px 16px 12px 60px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    color: #101828;
+}
+
+.mileageInputTo {
+    border: none;
+    border-radius: 0 12px 12px 0;
+    width: 160px;
+    height: 44px;
+    background-color: #f7f7f7;
+    padding: 12px 16px 12px 38px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    color: #101828;
 }

@@ -1,93 +1,53 @@
 "use client"
 import CarsList from "@/components/CarsList.tsx/CarsList"
 import SearchBox from "@/components/SearchBox/SearchBox"
-import { getCatalog } from "@/lib/api"
-import { useInfiniteQuery } from "@tanstack/react-query"
-import { SyncLoader } from "react-spinners"
 import css from "./CatalogPageClient.module.css"
-import { SearchForm } from "@/types/car"
-import { useState } from "react"
+import { SearchForm, CarCatalog } from "@/types/car"
+import { useEffect } from "react"
+import { useCarsListStore } from "@/store/carsListStore"
 
 interface Props {
-    brands: string[]
+    brands: string[];
+    initialData: {
+        cars: CarCatalog[];
+        page: number;
+        totalPages: number;
+        totalCars: number;
+    };
 }
 
 const rentalPrice = ['30', '40', '50', '60', '70', '80', '90', '100', '110', '120']
 
-const CatalogPageClient = ({ brands }: Props) => {
+const CatalogPageClient = ({ brands, initialData }: Props) => {
 
-    const [searchQuery, setSearchQuery] = useState({});
-    const limit = 12;
+    const { cars, isLoading, hasMore, fetchCars, fetchNextPage, setInitialData } = useCarsListStore();
 
-    const {
-        data, isLoading, error,
-        fetchNextPage,
-        hasNextPage,
-        isFetchingNextPage
-    } = useInfiniteQuery({
-        queryKey: ["cars", searchQuery],
-        queryFn: ({ pageParam = 1 }) => getCatalog(pageParam, limit, searchQuery),
-        initialPageParam: 1,
-        getNextPageParam: (lastPage) => {
-            const currentPage = Number(lastPage.page);
-            return currentPage < lastPage.totalPages ? currentPage + 1 : undefined;
-        },
-        refetchOnMount: false,
-    })
+    useEffect(() => {
+        if (cars.length === 0) {
+            setInitialData(initialData);
+        }
+    }, []);
 
     const handleSubmit = (data: SearchForm) => {
-
-        if (data) {
-            setSearchQuery(data)
-        }
-        console.log(searchQuery);
-
+        fetchCars(data);
     }
-
-
-
-
-    if (isLoading)
-        return (
-            <SyncLoader
-                color="#000000"
-                loading={true}
-                cssOverride={{
-                    display: "flex",
-                    justifyContent: "center",
-                    margin: "20px auto",
-                    opacity: "0.3",
-                }}
-                size={10}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-            />
-        );
-
-    if (error || !data) return <p>Something went wrong.</p>;
-
-
-    const allCars = data?.pages.flatMap(page => page.cars) ?? [];
-
 
     return (
         <>
             <SearchBox brands={brands} rentalPrice={rentalPrice} onSubmit={handleSubmit} />
-            <CarsList cars={allCars} />
+            <CarsList cars={cars.length > 0 ? cars : initialData.cars} />
 
-
-            {hasNextPage && (
+            {(cars.length > 0 ? hasMore : initialData.page < initialData.totalPages) && (
                 <button
                     type="button"
                     className={css.btn}
                     onClick={() => fetchNextPage()}
-                    disabled={isFetchingNextPage}
+                    disabled={isLoading}
                 >
-                    {isFetchingNextPage ? 'Loading...' : 'Load more'}
+                    {isLoading ? 'Loading...' : 'Load more'}
                 </button>
             )}
         </>
-
     )
 }
 

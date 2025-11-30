@@ -12,6 +12,7 @@
 }
 
 .icon {
+    background-color: transparent;
     width: 16px;
     height: 16px;
     fill: #333;
@@ -31,8 +32,8 @@
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: transparent;
     cursor: pointer;
+    background-color: transparent;
 
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
@@ -46,7 +47,7 @@
 }
 
 .btnSelect:hover .icon {
-    fill: #000;
+    fill: #243dc9;
 }
 
 .title,
@@ -137,4 +138,9 @@
 .linkDetails:hover,
 .linkDetails:focus {
     background-color: #0b44cd;
+}
+
+.iconActive {
+    fill: #3470ff;
+
 }

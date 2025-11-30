@@ -1,8 +1,5 @@
-
-
 import { CarCatalog, SearchForm } from "@/types/car";
 import { nextServer } from "./api";
-
 
 export type CatalogListResponse = {
     cars: CarCatalog[];
@@ -10,8 +7,6 @@ export type CatalogListResponse = {
     page: number;
     totalPages: number;
 };
-
-
 
 export const getCatalog = async (page: number, limit: number, searchQuery: SearchForm) => {
     const filteredQuery = Object.fromEntries(
@@ -26,8 +21,5 @@ export const getCatalog = async (page: number, limit: number, searchQuery: Searc
         }
     });
 
-
     return res.data;
 };
-
-

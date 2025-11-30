@@ -4,7 +4,7 @@ import SearchBox from "@/components/SearchBox/SearchBox"
 import css from "./CatalogPageClient.module.css"
 import { SearchForm, CarCatalog } from "@/types/car"
 import { useEffect } from "react"
-import { useCarsListStore } from "@/store/carsListStore"
+import { useCarsListStore } from "@/lib/store/carsListStore"
 
 interface Props {
     brands: string[];

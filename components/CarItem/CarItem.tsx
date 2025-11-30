@@ -3,7 +3,7 @@ import Image from "next/image";
 import css from "./CarItem.module.css"
 import { CarCatalog } from "@/types/car";
 import Link from "next/link";
-import { useCarsListStore } from "@/store/carsListStore";
+import { useCarsListStore } from "@/lib/store/carsListStore";
 import { useState, useEffect } from "react";
 
 

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { api } from '../api';
+import { AxiosError } from 'axios';
 
 
 export async function GET() {
@@ -12,7 +13,7 @@ export async function GET() {
 
         return NextResponse.json(
             { error: 'Failed to fetch brands' },
-            { status: 500 }
+            { status: (error as AxiosError).status }
         );
     }
 }

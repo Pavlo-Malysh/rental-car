@@ -39,7 +39,7 @@ const CarItem = ({ item, isPriority }: Props) => {
                 </svg>
             </button>
             <div className={css.wrapImg}>
-                <Image src={item.img} alt={item.brand} height={268} width={276} className={css.img} priority={isPriority} />
+                <Image src={item.img} alt={item.brand} height={268} width={276} className={css.img} priority={isPriority} loading="eager" />
             </div>
 
             <div className={css.titleWrap}>

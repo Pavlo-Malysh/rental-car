@@ -43,10 +43,10 @@ export const useCarsListStore = create<CarsListState>()(
                     const data = await getCatalog(1, LIMIT, searchQuery);
                     set({
                         cars: data.cars,
-                        page: 1,
-                        totalPages: data.totalPages,
-                        totalCars: data.totalCars,
-                        hasMore: 1 < data.totalPages,
+                        page: Number(data.page),
+                        totalPages: Number(data.totalPages),
+                        totalCars: Number(data.totalCars),
+                        hasMore: Number(data.page) < Number(data.totalPages),
                         isLoading: false,
                     });
                 } catch (error) {
@@ -58,18 +58,22 @@ export const useCarsListStore = create<CarsListState>()(
             fetchNextPage: async () => {
                 const { page, totalPages, isLoading, cars, searchQuery } = get();
 
+                console.log('fetchNextPage - current page:', page, 'totalPages:', totalPages);
+
                 if (isLoading || page >= totalPages) return;
 
                 set({ isLoading: true });
 
                 try {
-                    const nextPage = page + 1;
+                    const nextPage = Number(page) + 1;
+                    console.log('fetchNextPage - fetching page:', nextPage);
                     const data = await getCatalog(nextPage, LIMIT, searchQuery);
 
                     set({
                         cars: [...cars, ...data.cars],
-                        page: nextPage,
-                        hasMore: nextPage < data.totalPages,
+                        page: Number(data.page),
+                        totalPages: Number(data.totalPages),
+                        hasMore: Number(data.page) < Number(data.totalPages),
                         isLoading: false,
                     });
                 } catch (error) {
@@ -85,10 +89,10 @@ export const useCarsListStore = create<CarsListState>()(
             setInitialData: (data) => {
                 set({
                     cars: data.cars,
-                    page: data.page,
-                    totalPages: data.totalPages,
-                    totalCars: data.totalCars,
-                    hasMore: data.page < data.totalPages,
+                    page: Number(data.page),
+                    totalPages: Number(data.totalPages),
+                    totalCars: Number(data.totalCars),
+                    hasMore: Number(data.page) < Number(data.totalPages),
                     isLoading: false,
                 });
             },

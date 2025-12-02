@@ -3,6 +3,11 @@
     position: relative;
 }
 
+.img {
+
+    object-fit: cover;
+}
+
 .wrapImg {
     overflow: hidden;
     border-radius: 14px;

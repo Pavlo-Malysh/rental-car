@@ -1,6 +1,4 @@
-import axios, { AxiosError } from "axios";
-
-export type ApiError = AxiosError<{ error: string }>;
+import axios from "axios";
 
 const baseURL = process.env.EXTERNAL_API_URL || 'https://car-rental-api.goit.global'
 

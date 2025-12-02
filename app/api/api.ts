@@ -4,5 +4,5 @@ const baseURL = process.env.EXTERNAL_API_URL || 'https://car-rental-api.goit.glo
 
 export const api = axios.create({
     baseURL,
-    withCredentials: true,
+    withCredentials: false,
 });

@@ -15,7 +15,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
     const car = await getCarByIdServer(id);
 
     return {
-        title: car.brand,
+        title: `${car.brand} ${car.model}, ${car.year}`,
         description: car.description,
         openGraph: {
             title: `${car.brand} ${car.model}, ${car.year}`,

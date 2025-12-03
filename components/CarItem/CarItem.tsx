@@ -53,7 +53,7 @@ const CarItem = ({ item, isPriority }: Props) => {
                 </ul>
                 <ul className={css.textWrap}>
                     <li className={`${css.type} ${css.textItem}`}>{item.type}</li>
-                    <li className={css.textItem}>{item.mileage.toLocaleString("en-US").replace(/,/g, " ")}</li>
+                    <li className={css.textItem}>{item.mileage.toLocaleString("en-US").replace(/,/g, " ")} km</li>
                 </ul>
 
             </ul>

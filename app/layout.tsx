@@ -15,15 +15,21 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "RentalCar",
   description: "Car rental across Ukraine at great prices. Fast online booking, reliable partners, and convenient pick-up options. Travel comfortably with RentalCar",
+  icons: {
+    icon: [
+      { url: "/icons.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/x-icon" },
+    ],
+  },
   openGraph: {
     title: "RentalCar",
     description: "Car rental across Ukraine at great prices.",
     url: "https://rentalcar.com",
     images: [
       {
-        url: "https://www.volynnews.com/files/news/2023/12-12/373638/photo_2023-12-12_10-04-28.jpg",
-        width: 1374,
-        height: 916,
+        url: "/background-logo.png",
+        width: 1200,
+        height: 630,
         alt: "RentalCar logo",
       },
     ],

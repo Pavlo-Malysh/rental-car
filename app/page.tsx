@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Home page RentalCar",
+  title: "RentalCar",
   description: "Car rental across Ukraine at great prices. Fast online booking, reliable partners, and convenient pick-up options. Travel comfortably with RentalCar",
   openGraph: {
     title: "RentalCar",

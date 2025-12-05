@@ -1,21 +1,28 @@
 .title {
     font-family: "Manrope", sans-serif;
     font-weight: 700;
-    font-size: 60px;
-    line-height: 1.2;
+    font-size: 36px;
+    line-height: 1.1;
     text-align: center;
     color: #fff;
+    display: block;
+    margin: 0 auto;
     margin-bottom: 16px;
+    max-width: 375px;
+
 }
 
 .text {
     font-family: "Manrope", sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 1.33333;
     text-align: center;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 
@@ -25,10 +32,10 @@
     font-size: 16px;
     line-height: 1.25;
     color: #fff;
-
+    text-align: center;
     border-radius: 12px;
-    padding: 12px 88px;
-    max-width: 276px;
+    padding: 12px 58px;
+    max-width: 216px;
     background-color: #3470ff;
     display: block;
     margin: 0 auto;
@@ -52,5 +59,62 @@
 @media (min-resolution: 192dpi) and (min-width: 1440px) {
     .bgImage {
         background-image: url("/hero-img@2x.png");
+    }
+}
+
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+
+    .title {
+        max-width: 450px;
+        font-size: 48px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .text {
+        font-size: 16px;
+        line-height: 1.33333;
+        margin-bottom: 20px;
+        max-width: 280px;
+    }
+
+    .bgImage {
+
+        height: 700px;
+        padding-top: 426px;
+        padding-bottom: 60px;
+    }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+
+    .title {
+        max-width: 785px;
+        font-size: 60px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .text {
+        font-size: 24px;
+        line-height: 1.33333;
+        text-align: center;
+        max-width: 590px;
+        margin-bottom: 40px;
+    }
+
+    .heroLink {
+        padding: 12px 88px;
+        max-width: 276px;
+        background-color: #3470ff;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .bgImage {
+        padding-top: 436px;
     }
 }

@@ -95,10 +95,18 @@ a {
   color: currentColor;
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 }
 
 button {
   cursor: pointer;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #3470ff;
+  outline-offset: -2px;
 }
 
 img {

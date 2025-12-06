@@ -180,6 +180,11 @@
     color: #101828;
 }
 
+.mileageInputTo:focus,
+.mileageInputFrom:focus {
+    border-color: #3470ff;
+}
+
 .mileageInputFrom:-webkit-autofill,
 .mileageInputFrom:-webkit-autofill:hover,
 .mileageInputFrom:-webkit-autofill:focus,
@@ -198,12 +203,46 @@
 @media only screen and (min-width: 768px) {
     .filtersForm {
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: flex-end;
         justify-content: center;
-        gap: 16px;
+        gap: 32px;
         margin-bottom: 56px;
-
     }
+
+    .filterField {
+        width: auto;
+        flex: 1;
+        max-width: 336px;
+    }
+
+    .filterControl {
+        width: 100%;
+        padding: 12px 9px;
+    }
+
+    .customSelect {
+        width: auto;
+        min-width: 336px;
+    }
+
+    .mileageInputWrapper {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .mileageInputs {
+        display: flex;
+        width: 100%;
+    }
+
+    .filterSubmit {
+        width: auto;
+        min-width: 336px;
+        padding: 10px 44px;
+    }
+
+
 }
 
 /* Styles for Desktop devices */
@@ -215,6 +254,7 @@
         justify-content: center;
         gap: 16px;
         margin-bottom: 56px;
+        padding: 0 138px;
     }
 
     .filterControl {
@@ -238,15 +278,7 @@
     }
 
     .filterSubmit {
-        border-color: transparent;
-        border-radius: 12px;
-        padding: 10px 51px;
-        background-color: #3470ff;
-        font-family: "Manrope", sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 1.25;
-        color: #fff;
+        min-width: 0;
     }
 
     .selectDropdown {

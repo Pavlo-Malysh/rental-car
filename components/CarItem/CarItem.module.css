@@ -178,6 +178,10 @@
 
     }
 
+    .img {
+        min-height: 268px;
+    }
+
     .wrapImg {
         max-width: 276px;
     }

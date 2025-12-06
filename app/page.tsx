@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="page-main">
       <section>
         <Hero />
       </section>

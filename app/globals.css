@@ -49,6 +49,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  padding-top: 68px;
   color: var(--text-color);
   background-color: var(--bg-color);
   transition:
@@ -105,13 +106,6 @@ img {
   height: auto;
 }
 
-/* .container {
-  max-width: 1440px;
-  padding: 0 120px;
-  margin: 0 auto;
-
-} */
-
 .container {
   min-width: 320px;
   max-width: 375px;
@@ -131,6 +125,6 @@ img {
 @media only screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
-    padding: 0 64px;
+    padding: 0 120px;
   }
 }

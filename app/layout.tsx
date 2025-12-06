@@ -45,8 +45,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={manrope.variable}>
         <TanStackProvider>
-          <Header />
-          {children}
+          <div className="page-wrapper">
+            <Header />
+            {children}
+          </div>
         </TanStackProvider>
 
       </body>

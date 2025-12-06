@@ -1,17 +1,18 @@
 .itemCar {
-    width: calc((100% - 96px) / 4);
     position: relative;
+    display: block;
 }
 
 .img {
-
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .wrapImg {
     overflow: hidden;
     border-radius: 14px;
-    max-width: 276px;
+    width: 100%;
     max-height: 268px;
     margin-bottom: 16px;
 }
@@ -131,13 +132,15 @@
     font-family: "Manrope", sans-serif;
     font-weight: 600;
     font-size: 16px;
-
+    text-align: center;
     line-height: 1.25;
     color: #fff;
     border-radius: 12px;
-    padding: 12px 97px;
+    padding: 12px 20px;
+    width: 100%;
 
     background-color: #3470ff;
+
 }
 
 .linkDetails:hover,
@@ -147,5 +150,49 @@
 
 .iconActive {
     fill: #3470ff;
+
+}
+
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+    .itemCar {
+        width: calc((100% - 32px) / 2);
+
+    }
+
+    .wrapImg {
+        max-width: 375px;
+    }
+
+    .linkDetails {
+        padding: 12px 97px;
+        width: auto;
+    }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+    .itemCar {
+        width: calc((100% - 96px) / 4);
+
+    }
+
+    .wrapImg {
+        max-width: 276px;
+    }
+
+    .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .price {
+        flex-shrink: 0;
+        margin-left: 8px;
+    }
 
 }

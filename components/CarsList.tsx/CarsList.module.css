@@ -1,7 +1,21 @@
 .carsList {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 48px 32px;
+    flex-direction: column;
+
+    gap: 32px 0;
     margin-bottom: 80px;
 }
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+    .carsList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 48px 32px;
+        margin-bottom: 80px;
+    }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {}
